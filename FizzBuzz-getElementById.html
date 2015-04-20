@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="William Cook">
+  <meta name="keywords" content="fizzbuzz, dom manipulation, getelementbyid, javascript, html">
+</head>
+<body>
+
+<h1>FizzBuzz With Basic DOM Manipulation</h1>
+
+<p id="buzz"></p>
+
+<script>
+var getFizzBuzz = function() {
+  fizzbuzz = "";
+  for (var i = 1; i <= 100; i++) {
+    if ( i % 15 === 0 ) {
+      fizzbuzz += "\nFizzBuzz!";
+      } else if ( i % 5 === 0 ){
+      fizzbuzz += "\nFizz!";
+      } else if ( i % 3 === 0 ) {
+      fizzbuzz += "\nBuzz!";
+      } else {
+      fizzbuzz += "\n" + i;
+      }
+     }
+  return fizzbuzz;
+}
+document.getElementById("buzz").innerHTML = getFizzBuzz();
+</script>
+
+</body>
+</html>
