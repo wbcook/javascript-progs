@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="William Cook">
+  <meta name="keywords" content="fizzbuzz, dom manipulation, getelementbyid, javascript, html">
+</head>
+<body>
+
+  <h1>FizzBuzz With Basic DOM Manipulation</h1>
+  <a href="http://www.w3schools.com/js/js_htmldom.asp" alt="JS HTML DOM W 3 Schools">W3Schools JS DOM Primer</a>
+  <a href="http://en.wikipedia.org/wiki/Fizz_buzz" alt="What is Fizz Buzz">What is Fizz Buzz?</a>
+
+  <!-- myFizzBuzzForm -->
+  <form name="myFizzBuzzForm" onsubmit="return validateFizzBuzzForm()">
+    <input type="text" name="fwi"><br>
+    <input type="text" name="swi"><br>
+    <input type="submit" value="Submit" onclick="getFizzBuzz()"><br>
+  </form>
+  <p id="buzz"></p>
+
+  <!-- Fizz Buzz App -->
+  <script>
+  var getFizzBuzz = function() {
+    fizzbuzz = "";
+    for (var i = 1; i <= 100; i++) {
+      if ( i % 15 === 0 ) {
+        fizzbuzz += "\nFizzBuzz!";
+      } else if ( i % 5 === 0 ){
+        fizzbuzz += "\nFizz!";
+      } else if ( i % 3 === 0 ) {
+        fizzbuzz += "\nBuzz!";
+      } else {
+        fizzbuzz += "\n" + i;
+      }
+    }
+    document.getElementById("buzz").innerHTML = fizzbuzz;
+    //return fizzbuzz;
+  }
+  //document.getElementById("buzz").innerHTML = getFizzBuzz();
+  </script>
+
+  <!-- Form Validation -->
+  <script>
+  function validateFizzBuzzForm() {
+    var firstWordInput = document.forms["myFizzBuzzForm"]["fwi"].value;
+    var secondWordInput = document.forms["myFizzBuzzForm"]["swi"].value;
+    if (firstWordInput === null || firstWordInput === "") {
+      alert("Enter a first word, first!");
+      return false;
+    }
+    if (secondWordInput === null || secondWordInput ==="") {
+      alert("Enter a second word, second!");
+      return false;
+    }
+  }
+  </script>
+
+</body>
+</html>
