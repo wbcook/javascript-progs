@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="William Cook">
+</head>
+<body>
+
+  <p id="name0"></p>
+  <p id="name1"></p>
+  <p id="name2"></p>
+
+  <script>
+  var names = ["Sissy", "Loo", "Tom"];
+  var i = 0;
+  var l = names.length;
+
+  var getName = function(i) {
+    var i = i;
+    setTimeout(function(){document.getElementById("name" + i).innerHTML = names[i];}, 3000);
+    console.log(names[i]);
+  }
+
+  for (i, l; i < l; i++) {
+    getName(i);
+  }
+  </script>
+
+</body>
+</html>
