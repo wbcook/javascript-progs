@@ -5,16 +5,7 @@
 </head>
 <body>
 
-  <p id="name0"></p>
-  <p id="name1"></p>
-  <p id="name2"></p>
-  <p id="name3"></p>
-  <p id="name4"></p>
-  <p id="name5"></p>
-  <p id="name6"></p>
-  <p id="name7"></p>
-  <p id="name8"></p>
-  <p id="name9"></p>
+  <p><span id="name"></span> followed you!</p>
 
   <script>
   var names = ["Sissy", "Loo", "Tom", "Gradgrind", "Bounderby", "Stephen", "Rachael", "Sparsit", "Bitzer", "Merrylegs"];
@@ -23,7 +14,7 @@
 
   var getName = function(i) {
     var i = i;
-    setTimeout(function(){document.getElementById("name" + i).innerHTML = names[i];}, 1000 * Math.atan(i));
+    setTimeout(function(){document.getElementById("name").innerHTML = names[i];}, 1000 * i);
     console.log(names[i]);
   }
 
