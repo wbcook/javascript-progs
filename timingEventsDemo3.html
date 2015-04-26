@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="William Cook">
+  <meta name="description" content="add the names to the DOM by appending new elements">
+</head>
+<body>
+
+  <div id="head"></div>
+
+  <script>
+  var names = ["Sissy", "Loo", "Tom", "Mr. Gradgrind", "Mr. Bounderby", "Stephen", "Rachael", "Mrs. Sparsit", "Bitzer", "Merrylegs", "Mr. Harthouse"];
+  var i = 0;
+  var l = names.length;
+
+  var appendNameElement = function(i) {
+    var i = i;
+    // Create a new element.
+    var newElement = document.createElement("p");
+    // Create some new content.
+    var newContent = document.createTextNode(names[i]);
+    // Find the existing element to append the new one on.
+    var currentElement = document.getElementById("head");
+    // Append the new content to the new element
+    newElement.appendChild(newContent);
+    // Append the new element to the existing element. I named this one "head".
+    setTimeout(function(){currentElement.appendChild(newElement)}, 1000 * i);
+    console.log(names[i]);
+  }
+
+  for (i, l; i < l; i++) {
+    appendNameElement(i);
+  }
+  </script>
+
+</body>
+</html>
