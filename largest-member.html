@@ -59,13 +59,19 @@ nums.map(function (n,i,m) {
 
 // largest member recursive
 
-var array = [1,2,3,4,5];
+var array = [3,2,42,4,5];
 
-array.map(function (n,i,m){
+var largest = 0;
 
-  
+array.map(function (n){
+
+  if ( n > largest ) {
+    largest = n;
+  }
 
 });
+
+console.log(largest);
 
 </script>
 
