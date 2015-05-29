@@ -1,0 +1,22 @@
+<!--
+
+Write function that reverses a list, preferably in place.
+
+-->
+
+<script>
+
+// Not in place, but works :) in place next time. Then recursive. CAW CAW!
+
+var nums = [1,2,3,4,5];
+
+function reverses1(lat) {
+  var result = [];
+
+  for (var i = 0; i < lat.length; i++) {
+    result[i] = lat[lat.length - i - 1];
+  }
+  return result;
+}
+
+</script>
