@@ -20,3 +20,18 @@ function reverses1(lat) {
 }
 
 </script>
+
+<script>
+
+function reverses2(lat) {
+  var tmp;
+
+  tmp = lat[0];
+
+  for (var i = 0; i < lat.length; i++) {
+    lat[i] = lat[lat.length - i];
+  }
+  console.log(lat);
+}
+
+</script>
