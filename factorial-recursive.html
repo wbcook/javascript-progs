@@ -9,6 +9,8 @@ var factorial = (function f(num){
 });
 </script>
 
+<script>
+
 function factorial(num){
   if (num<=1){
     return 1;
@@ -16,3 +18,7 @@ function factorial(num){
     return num * arguments.callee(num-1);
   }
 }
+
+</script>
+
+<html>

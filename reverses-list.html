@@ -29,8 +29,9 @@ function reverses2(lat) {
   tmp = lat[0];
 
   for (var i = 0; i < lat.length; i++) {
-    lat[i] = lat[lat.length - i];
+    lat[i] = lat[lat.length - i - 1];
   }
+  lat[lat.length - 1] = tmp;
   console.log(lat);
 }
 
