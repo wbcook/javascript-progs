@@ -32,7 +32,26 @@ function reverses2(lat) {
     lat[i] = lat[lat.length - i - 1];
   }
   lat[lat.length - 1] = tmp;
-  console.log(lat);
+  return lat;
+}
+
+</script>
+
+<script>
+
+function reverses3(lat) {
+  var tmp1;
+  var tmp2;
+  var l = lat.length;
+
+  for (var i = 0; i < l; i++ ) {
+    tmp1 = lat[i];
+    tmp2 = lat[l - 1 - i];
+    lat[i] = tmp2;
+    lat[l - 1 - i] = tmp2;
+  }
+
+  return lat;
 }
 
 </script>
