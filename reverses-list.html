@@ -9,6 +9,7 @@ Write function that reverses a list, preferably in place.
 // Not in place, but works :) in place next time. Then recursive. CAW CAW!
 
 var nums = [1,2,3,4,5];
+var nums2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,42];
 
 function reverses1(lat) {
   var result = [];
@@ -44,11 +45,12 @@ function reverses3(lat) {
   var tmp2;
   var l = lat.length;
 
-  for (var i = 0; i < l; i++ ) {
+  for (var i = 0; i < l / 2; i++ ) {
     tmp1 = lat[i];
     tmp2 = lat[l - 1 - i];
     lat[i] = tmp2;
-    lat[l - 1 - i] = tmp2;
+    lat[l - 1 - i] = tmp1;
+    console.log(lat);
   }
 
   return lat;
