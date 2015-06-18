@@ -1,0 +1,27 @@
+<script>
+
+/**
+/* Write a function that tests wheter a string is a palindrome.
+**/
+
+var palindrome = "Ada";
+
+function palindrome1(lat) {
+  if (lat) {
+    var lat2 = lat.toLowerCase();
+    var length = lat2.length;
+
+    for (var i = 0; i < length; i++) {
+      if ( lat2[i] == lat2[length - 1 - i] ) {
+        ;
+      } else {
+        return false;
+      }
+      console.log(lat + " is a palindrome!");
+    }
+  }
+  //return false;
+  console.log("what?");
+}
+
+</script>
