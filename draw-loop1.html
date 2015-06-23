@@ -1,13 +1,49 @@
+
+
+
+<!-- This is the HTML5 Canvas tag -->
+<canvas id="canvas" width="400" height="400" style="border:1px solid #c3c3c3;">
+  Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+
 <script>
 
 var canvas = document.getElementById("canvas");
 
-var draw = function() {
-  setTimeout(function() {
+var xPos = 10;
+var yPos = 200;
 
-  }, 1000 / 30);
+
+
+var draw = function() {
+
+  if (canvas.getContext) {
+
+    var ctx = canvas.getContext("2d");
+
+    ctx.fillRect(xPos,yPos,10,10);
+    ctx.fill();
+
+    // How to blank out previous frame?
+    document.getElementById("canvas").style.background = "white";
+
+  }
+
 }
 
-</script>
+for (var i = 0; i < 300; i++) {
+
+  setTimeout(function() {
+
+    draw();
+    xPos += 1;
+
+  }, 1000 / 30);
+
+}
+
 
 // draw() goes inside of the setTimeout?
+
+</script>
