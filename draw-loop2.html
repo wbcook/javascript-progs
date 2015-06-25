@@ -23,6 +23,14 @@ var draw = function() {
     ctx.fillRect(xPos,yPos,10,10);
     ctx.fill();
 
+    xPos += 15;
+    if (yPos > 160) {
+      yPos -= 5;
+    } else {
+      yPos -= 15;
+    }
+
+
     // How to blank out previous frame?
     document.getElementById("canvas").style.background = "white";
 
