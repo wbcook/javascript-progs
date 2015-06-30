@@ -19,7 +19,7 @@ Walker.prototype.walk = function() {
 }
 
 // Create a Walker object
-var walker1 = new Walker(1, 1);
+var walker1 = new Walker(100, 100);
 
 // Test the new Walker walker1
 console.log(walker1.xPos);
@@ -38,7 +38,8 @@ var draw = function() {
 
     var ctx = canvas.getContext("2d");
 
-    ctx.fillRect(200,200,40,40);
+    ctx.fillRect(walker1.xPos,walker1.yPos,40,40);
+    walker1.walk();
     ctx.fill();
 
   }
