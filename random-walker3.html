@@ -1,0 +1,58 @@
+<!-- This is the HTML5 canvas tag -->
+<canvas id="canvas" width="400" height="400" style="border:1px solid #c3c3c3;">
+  Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+
+// Define the Walker constructor
+var Walker = function(xPos,yPos) {
+  this.xPos = xPos;
+  this.yPos = yPos;
+}
+
+// Add a couple of methods to Walker.prototype
+// Choose a random direction and increment the position
+Walker.prototype.walk = function() {
+  var choice = Math.random();
+  if (choice >= 0.75){
+      this.xPos += 1;
+  } else if (choice >= 0.50 && choice < 0.75) {
+    this.xPos -= 1;
+  } else if (choice >= 0.25 && choice < 0.50) {
+    this.yPos += 1;
+  } else if ( choice < 0.25) {
+    this.yPos -= 1;
+  }
+  console.log("I'm walking!");
+}
+
+// Draw the walker to the canvas
+Walker.prototype.display = function(ctx,x,y) {
+    ctx.fillRect(x,y,1,1);
+    ctx.fill();
+}
+
+// Create a Walker object
+var walker1 = new Walker(100, 100);
+
+// Get the canvas element
+var canvas = document.getElementById("canvas");
+
+// Create a draw function
+var draw = function() {
+  if (canvas.getContext) {
+    var ctx = canvas.getContext("2d");
+    walker1.walk();
+    walker1.display(ctx,walker1.xPos,walker1.yPos);
+  }
+}
+
+// Loop the draw function every ~16ms
+setInterval(function() {
+
+  draw();
+
+}, 1000 / 30);
+
+</script>
