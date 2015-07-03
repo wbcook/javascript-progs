@@ -14,7 +14,7 @@ var Walker = function(xPos,yPos) {
 // Add a couple of methods to Walker.prototype
 // Choose a random direction and increment the position
 Walker.prototype.walk = function() {
-  var choice = getRandom25();
+  var choice = getRandom4();
   if (choice == 1){
     this.xPos += 2;
   } else if (choice == 2) {
@@ -29,7 +29,7 @@ Walker.prototype.walk = function() {
 
 // Draw the walker to the canvas
 Walker.prototype.display = function(ctx,x,y) {
-    var choice = getRandom25();
+    var choice = getRandom4();
     var color = "black";
     if (choice == 1){
       color = "red";
@@ -61,7 +61,7 @@ var draw = function() {
   }
 }
 
-var getRandom25 = function() {
+var getRandom4 = function() {
   var random = Math.random();
   var choice = 0;
   if (random >= 0.75) {
