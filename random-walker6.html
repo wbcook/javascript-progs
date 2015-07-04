@@ -1,5 +1,9 @@
 <!-- This is the HTML5 canvas tag -->
-<canvas id="canvas" width="400" height="400" style="border:1px solid #c3c3c3;">
+<canvas id="canvas" width="400" height="400" style="margin: 1px; border:1px solid #c3c3c3; float: left">
+  Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<canvas id="canvas2" width="400" height="400" style="margin: 1px; border: 1px solid #c3c3c3; float: left;">
   Your browser does not support the HTML5 canvas tag.
 </canvas>
 
@@ -113,8 +117,12 @@ Walker.prototype.display = function(ctx,x,y) {
 // Create a Walker object
 var walker1 = new Walker(200, 200);
 
+var walker2 = new Walker(200, 200);
+
 // Get the canvas element
 var canvas = document.getElementById("canvas");
+
+var canvas2 = document.getElementById("canvas2");
 
 // Create a draw function
 var draw = function() {
@@ -125,10 +133,19 @@ var draw = function() {
   }
 }
 
+var draw2 = function() {
+  if (canvas2.getContext) {
+    var ctx = canvas2.getContext("2d");
+    walker2.walk8();
+    walker2.display(ctx,walker2.xPos,walker2.yPos);
+  }
+}
+
 // Loop the draw function every ~16ms
 setInterval(function() {
 
   draw();
+  draw2();
 
 }, 1000 / 30);
 
