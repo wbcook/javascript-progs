@@ -81,7 +81,7 @@ var canvas = document.getElementById("canvas");
 var draw = function() {
   if (canvas.getContext) {
     var ctx = canvas.getContext("2d");
-    walker1.walk8();
+    walker1.walk4();
     walker1.display(ctx,walker1.xPos,walker1.yPos);
   }
 }
@@ -89,11 +89,11 @@ var draw = function() {
 var getRandom4 = function() {
   var random = Math.random();
   var choice = 0;
-  if (random >= 0.75) {
+  if (random < 0.25) {
     choice = 1;
-  } else if (random >= 0.50 && random < 0.75) {
+  } else if (random < 0.50) {
     choice = 2;
-  } else if (random >= 0.25 && random < 0.50) {
+  } else if (random < 0.75) {
     choice = 3;
   } else {
     choice = 4;
