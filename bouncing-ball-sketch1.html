@@ -5,8 +5,8 @@
 
 <script>
 
-  var width = 800;
-  var height = 400;
+  var WIDTH = 800;
+  var HEIGHT = 400;
 
   // Define the bouncing Ball constructor
   var Ball = function(xPos, yPos, xSpeed, ySpeed) {
@@ -22,11 +22,11 @@
     this.xPos += this.xSpeed;
     this.yPos += this.ySpeed;
 
-    if ( this.xPos > width || this.xPos < 0 ) {
+    if ( this.xPos > WIDTH || this.xPos < 0 ) {
       this.xSpeed *= -1;
     }
-    if (this.yPos > height || this.yPos < 0 ) {
-      this.ySPeed *= -1;
+    if (this.yPos > HEIGHT || this.yPos < 0 ) {
+      this.ySpeed *= -1;
     }
     console.log("I'm bouncing!");
   }
@@ -38,7 +38,7 @@
   }
 
   // Create a Ball instance
-  var ball1 = new Ball();
+  var ball1 = new Ball(10,10,10,10);
 
   // Get the canvas element.
   var canvas = document.getElementById("canvas");
