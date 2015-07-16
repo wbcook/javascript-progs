@@ -1,12 +1,12 @@
 <!-- This is the HTML5 canvas tag -->
-<canvas id="canvas" width="800" height="400" style="margin: 1px; border: 1px solid #c3c3c3;">
+<canvas id="canvas" width="800" height="200" style="margin: 1px; border: 1px solid #c3c3c3;">
   This is a bouncing ball sketch on a HTML5 canvas element.
 </canvas>
 
 <script>
 
   var WIDTH = 800;
-  var HEIGHT = 400;
+  var HEIGHT = 200;
 
   // Define the bouncing Ball constructor
   var Ball = function(xPos, yPos, xSpeed, ySpeed) {
@@ -32,13 +32,14 @@
   }
 
   Ball.prototype.display = function(ctx,path) {
-    path.arc(this.xPos,this.yPos,10,0,Math.PI*2,true);
-    ctx.strokeStyle = "#black";
+    path.arc(this.xPos,this.yPos,20,0,Math.PI*2,true);
+    ctx.clearRect(0,0,WIDTH,HEIGHT);
+    ctx.strokeStyle = "black";
     ctx.stroke(path);
   }
 
   // Create a Ball instance
-  var ball1 = new Ball(10,10,10,10);
+  var ball1 = new Ball(10,100,5,10);
 
   // Get the canvas element.
   var canvas = document.getElementById("canvas");
