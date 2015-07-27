@@ -9,7 +9,7 @@ var server = net.createServer(function (socket) {
   socket.on('data', function(data) {
 
     console.log('Data ' + socket.remoteAddress +': '+ data);
-    socket.write('Over, Oveur!');
+    socket.write("You said: " + data);
     socket.pipe(socket);
   });
 
