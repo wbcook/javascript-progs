@@ -1,2 +1,2 @@
-# javascript-progs
-JavaScript practice scripts.
+# js-workspace
+JavaScript practice programs.
